@@ -1,32 +1,40 @@
 
 package chatbot_test1;
+import chatbot_test1.Secondinput.*;
+
 
 import java.awt.Desktop;
 import java.awt.FlowLayout;
 import java.awt.image.BufferedImage;
 import javax.swing.JOptionPane;
 import java.io.IOException;
-import java.io.InterruptedIOException;
 import java.util.Scanner;
-import java.util.*;
 import java.io.*;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
-import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-
-class Inputs{
-    Scanner sc = new Scanner(System.in);
+interface Inputs{
+ Scanner sc = new Scanner(System.in);
     
-    void welcome(){
-        
-        
+    void welcome();
+    void firstinput();    
+    void choice1();
+    void choice2();
+    void choice3();
+    void choice4();
+    void choice5();
+    void choice6();
+    void choice7();
+  //void secondinput();
+   }
+
+class Feathers implements Inputs{
+public void welcome(){
         System.out.println("\t\t\t\t\t\t hiiiii......"); 
-    }    
-        
-    void firstinput(){
+    }
+    public void firstinput(){
     
     
     String str1= "hi";                                                                           //possible outputs
@@ -40,8 +48,14 @@ class Inputs{
     
     
     try{
-    str2= sc.nextLine();                                                                        //put an output delay at here..
-    Thread.sleep(1500);
+    str2= sc.nextLine();
+    
+                                                                                                                //put an output delay at here
+    if(str2.isEmpty()){
+    System.out.println("\t\t\t\t\t\t no input detected");
+    }
+    
+  Thread.sleep(1500);
     }
     
     catch(InterruptedException e){
@@ -51,20 +65,14 @@ class Inputs{
     
     if(str2.equals(str1) || str2.equals(str3) || str2.equals(str4) || str2.equals(str5)|| str2.equals(str6)|| str2.equals(str7)|| str2.equals(str8))
     {
-       
-        System.out.println("\t\t\t\t\t\t hello !!! how are you......\n");
+       System.out.println("\t\t\t\t\t\t hello !!! how are you......\n");
     }    
-       
-        
     else{
-                
-                System.out.println("\t\t\t\t\t\t I am on testing phase.....sorry for the inconvenience\n");
-                             
+                  System.out.println("\t\t\t\t\t\t I am on testing phase.....sorry for the inconvenience\n");
+    }                         
     }    
     
-    }
-
-    void choice1(){                                                                                          
+    public void choice1(){                                                                                          
     
     System.out.println("\t\t\t\t\t\t opening notepad....\n");
      Runtime rs = Runtime.getRuntime();
@@ -77,9 +85,8 @@ class Inputs{
     }   
      }
     
-    
-    
-   void choice2(){
+    public void choice2()
+   {
    System.out.println("\t\t\t\t\t\t opening image folder\n");
    
   try{
@@ -95,7 +102,7 @@ class Inputs{
    }}
    
    
-   void choice3(){                                                                                       //calculator using desktop api 
+   public void choice3(){                                                                                       //calculator using desktop api 
    
    try
    {
@@ -111,7 +118,7 @@ class Inputs{
    }
    }
    
-   void choice4(){
+   public void choice4(){
    
    try
    {
@@ -128,15 +135,15 @@ class Inputs{
    }
    
    
-   void choice5(){
+   public void choice5(){
    
    System.out.println("\t\t\t\t\t\t ChatBot 'JOE' ");
-   System.out.println("\t\t\t\t\t\t develpoed by Bharat Chitara");
+   System.out.println("\t\t\t\t\t\t develpoed by bharat Chitara ");
    System.out.println("\t\t\t\t\t\t version 1.0.0.1");
      
    }
    
-   void choice6(){
+   public void choice6(){
    
    System.out.println("\t\t\t\t\t\t 5 star : excellent");
    System.out.println("\t\t\t\t\t\t 4 star : great");
@@ -145,112 +152,55 @@ class Inputs{
    System.out.println("\t\t\t\t\t\t 1 star : poor");
    System.out.println("\t\t\t\t\t\t enter your responce"); 
    int response = sc.nextInt();
-   System.out.println("\t\t\t\t\t\t your responce was submitted...Thank You");
+   
+  System.out.println("\t\t\t\t\t\t your responce was submitted...Thank You");
    }
    
    
-   void choice7(){
+   //void choice7(){
    
-}
+//}
           
-   void secondinput(){
-  String name =null;
-   String movie =null;
-   String mtype1="action";
-   String mtype2="sci-fi";
-   String mtype3="romantic";
-   String mtype4="sci fi";
-   
-   System.out.println("\t\t\t\t\t\t tell me about yourself..");
-   System.out.println("\t\t\t\t\t\t what is your name");
-   name =sc.nextLine();
-   
- try{                                                                                         //try - catch for timing delay
-        
-             Thread.sleep(1500);
-             System.out.println("\t\t\t\t\t\t " + name +  " which kind of movies you like ");
-   
-    }
+  
     
-    catch(InterruptedException e){
-    System.out.println(e);
-            }
-    
-   movie = sc.nextLine();
-   
-   if(movie.equals(mtype1) )                                                                                 //if else statement for movie type
-   {  
-       try{
-           Thread.sleep(1500);
-       
-       System.out.println("\t\t\t\t\t\t top 3 upcoming movies this year");
-             System.out.println("\t\t\t\t\t\t   * Race 3");
-             System.out.println("\t\t\t\t\t\t   * baaghi 2 ");
-             System.out.println("\t\t\t\t\t\t   * Jurrassic World");
-       }
-         catch(InterruptedException e){
-          System.out.println(e);
-            }
-   }
-   
-   else if(movie.equals(mtype2) || movie.equals(mtype4)){
- try{
-     Thread.sleep(1500);
- 
-       System.out.println("\t\t\t\t\t\t top 3 upcoming movies this year");
-             System.out.println("\t\t\t\t\t\t    * Avengers : Infinity War");
-             System.out.println("\t\t\t\t\t\t    * Deadpool 2 ");
-             System.out.println("\t\t\t\t\t\t    * Robot 2 ");
-   }
-   catch(InterruptedException e){
-    System.out.println(e);
-            }
-   }
-   
-   else if( movie.equals(mtype3)){
-     try{
-         Thread.sleep(1500);
-          System.out.println("\t\t\t\t\t\t top 3 upcoming movies this year");
-          System.out.println("\t\t\t\t\t\t   * Midnight Sun");
-          System.out.println("\t\t\t\t\t\t   * October");
-          System.out.println("\t\t\t\t\t\t   * Overboard");
-   
-}
-    catch(InterruptedException e){
-     System.out.println(e);
-   }     
-   }
-   
-   
-   else{ 
-       try{
-           Thread.sleep(1500);
-       
-   System.out.println("\t\t\t\t\t\t this movie type is not in my database..\n");
-   }
-   
-   catch(InterruptedException e){
-    System.out.println(e);
-            }
-   } 
-   
-   }
- 
-}
- 
-class Feathers{
- Scanner sc = new Scanner(System.in);
+Scanner sc = new Scanner(System.in);
  
  void one(){
+     
+     try{
+           Thread.sleep(1500);
+       
      System.out.println("\t\t\t\t\t\t what is your favorite programming langage\n");
-       String p_lang= sc.nextLine();
+     }
+     catch(InterruptedException e){
+         System.out.println(e);
+     
+     
+     }
+     String p_lang= sc.nextLine();
+     if(p_lang.isEmpty()){
+    System.out.println("\t\t\t\t\t\t no input detected");
+    }
+    
+     System.out.println("\t\t\t\t\t\t interest to see some facts about your favorite prog. language ?");
+     
+     String choice= sc.nextLine();                                                                 //input for seeing facts 
+      if(choice.isEmpty()){
+    System.out.println("\t\t\t\t\t\t no input detected");
+    }
+                                      
+     String choice1="yes";
+     String choice2= "no";
+     
+     
        String lang1="c";
        String lang2="c++";
        String lang3="java";
        String lang4="python";
        String lang5="javascript";
        
-      
+     if(choice.equals(choice1))
+     { 
    if(p_lang.equals(lang1))
    {
        JOptionPane.showMessageDialog(null,"c programming is the second most language for making projects");
@@ -276,13 +226,24 @@ class Feathers{
      JOptionPane.showMessageDialog(null,"this language is not popular or may you spell it wrong....lol ");
        
    }}
+ 
+     else
+ {
+     
+     System.out.println("\t\t\t\t\t\t maybe later .....");
+ }
+ }
 
-void two(){
+ void two(){                                                                  
 
 System.out.println("\t\t\t\t\t\t what is your current mood");
  String mood=sc.nextLine();       
+     
+ if(mood.isEmpty()){
+    System.out.println("\t\t\t\t\t\t no input detected");
+    }  
        
-       String mood1="happy";
+     String mood1="happy";
        String mood2="angry";
 
     if(mood.equals(mood1) ){
@@ -317,9 +278,14 @@ System.out.println("\t\t\t\t\t\t what is your current mood");
         }
   }
 }     
+
+    @Override
+    public void choice7() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
 
-class Image extends Feathers {
+ class Image  {
      
     void show() throws IOException{                                                 //java image code using applets 
         
@@ -333,11 +299,8 @@ class Image extends Feathers {
         frame.add(lbl);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    
-    
-    }
-    
-}
+       }
+   }
  
 public class Chatbot_test1 {
 
@@ -346,13 +309,15 @@ public class Chatbot_test1 {
     JOptionPane.showMessageDialog(null,"--------------------------------------------------welcome to the chatbot 'JOE'------------------------------------------------------");
     
    Scanner sc = new Scanner(System.in);
-    Inputs obj = new Inputs();                                                        //class objects
-    //Feathers obj1 = new Feathers();
+   // Inputs obj = new Inputs();                                                        //class objects
+    Inputs obj = new Feathers();
+    Feathers obj1 = new Feathers();
     Image obj2 =new Image();
     
     obj.welcome();                                                                         
     obj.firstinput();
-    obj.secondinput();
+   chatbot_test1.Secondinput out = new chatbot_test1.Secondinput();
+   out.secondinput();
     
     
     System.out.println("\t\t\t\t\t\t ok...choose one option to use more feathers \n");
@@ -376,8 +341,8 @@ public class Chatbot_test1 {
             case 6 :   obj.choice6();break;
             //case 7 :   obj.choice7(); break;
         }
-        obj2.one();
-         obj2.two();
+        obj1.one();
+         obj1.two();
          obj2.show();
     }
     }
