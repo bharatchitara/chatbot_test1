@@ -1,7 +1,7 @@
 
 package chatbot_test1;
-import chatbot_test1.Secondinput.*;
-
+//import chatbot_test1.Secondinput.*;
+//import chatbot_test1.thirdoption.*;
 
 import java.awt.Desktop;
 import java.awt.FlowLayout;
@@ -49,13 +49,13 @@ public void welcome(){
     
     try{
     str2= sc.nextLine();
-    
-                                                                                                                //put an output delay at here
-    if(str2.isEmpty()){
-    System.out.println("\t\t\t\t\t\t no input detected");
+    while(!str2.matches("[a-zA-Z]+"))                                                     //regex are used to stop false inputs.
+    {
+    System.out.println("please enter the valid name!");
+    str2= sc.nextLine();
     }
-    
-  Thread.sleep(1500);
+   
+   Thread.sleep(1500);
     }
     
     catch(InterruptedException e){
@@ -68,7 +68,7 @@ public void welcome(){
        System.out.println("\t\t\t\t\t\t hello !!! how are you......\n");
     }    
     else{
-                  System.out.println("\t\t\t\t\t\t I am on testing phase.....sorry for the inconvenience\n");
+                  System.out.println("\t\t\t\t\t\t sorry didn't understand ... still learning ;)\n");
     }                         
     }    
     
@@ -80,6 +80,8 @@ public void welcome(){
     try {
       rs.exec("notepad");
     }
+    
+    
     catch (IOException e) {
       System.out.println(e);
     }   
@@ -102,7 +104,7 @@ public void welcome(){
    }}
    
    
-   public void choice3(){                                                                                       //calculator using desktop api 
+   public void choice3(){                                                        //calculator using desktop api 
    
    try
    {
@@ -139,7 +141,7 @@ public void welcome(){
    
    System.out.println("\t\t\t\t\t\t ChatBot 'JOE' ");
    System.out.println("\t\t\t\t\t\t develpoed by bharat Chitara ");
-   System.out.println("\t\t\t\t\t\t version 1.0.0.1");
+   System.out.println("\t\t\t\t\t\t version 1.0.0.3");
      
    }
    
@@ -151,145 +153,36 @@ public void welcome(){
    System.out.println("\t\t\t\t\t\t 2 star : fair");
    System.out.println("\t\t\t\t\t\t 1 star : poor");
    System.out.println("\t\t\t\t\t\t enter your responce"); 
-   int response = sc.nextInt();
+   
+   String response = sc.nextLine();
+   while(!response.matches("[1-5]"))                                                     //regex are used to stop false inputs.
+    {
+    System.out.println("please enter a number ranging {1 - 5} ");
+    response = sc.nextLine();
+    }
    
   System.out.println("\t\t\t\t\t\t your responce was submitted...Thank You");
    }
    
    
-   //void choice7(){
-   
-//}
-          
-  
-    
-Scanner sc = new Scanner(System.in);
- 
- void one(){
-     
-     try{
-           Thread.sleep(1500);
-       
-     System.out.println("\t\t\t\t\t\t what is your favorite programming langage\n");
-     }
-     catch(InterruptedException e){
-         System.out.println(e);
-     
-     
-     }
-     String p_lang= sc.nextLine();
-     if(p_lang.isEmpty()){
-    System.out.println("\t\t\t\t\t\t no input detected");
-    }
-    
-     System.out.println("\t\t\t\t\t\t interest to see some facts about your favorite prog. language ?");
-     
-     String choice= sc.nextLine();                                                                 //input for seeing facts 
-      if(choice.isEmpty()){
-    System.out.println("\t\t\t\t\t\t no input detected");
-    }
-                                      
-     String choice1="yes";
-     String choice2= "no";
-     
-     
-       String lang1="c";
-       String lang2="c++";
-       String lang3="java";
-       String lang4="python";
-       String lang5="javascript";
-       
-     if(choice.equals(choice1))
-     { 
-   if(p_lang.equals(lang1))
-   {
-       JOptionPane.showMessageDialog(null,"c programming is the second most language for making projects");
-   }
-   
-   else if(p_lang.equals(lang2)){
-  JOptionPane.showMessageDialog(null,"The c++17 is the current version of c++ programming released in dec.2017");
-          
-   }
-  
-   else if(p_lang.equals(lang3)){
-  JOptionPane.showMessageDialog(null,"java was the first portable programming langage when build");
-  }   
-  
-   else if(p_lang.equals(lang4)){
-   JOptionPane.showMessageDialog(null,"The average salary of python developer was 114000$ per annum in 2017.");
-  }
-  
-   else if(p_lang.equals(lang5)){
-   JOptionPane.showMessageDialog(null,"javascript can be use in both front end and back end programming very efficiently");
- }
-   else{
-     JOptionPane.showMessageDialog(null,"this language is not popular or may you spell it wrong....lol ");
-       
-   }}
- 
-     else
- {
-     
-     System.out.println("\t\t\t\t\t\t maybe later .....");
- }
- }
+   public void choice7(){
+   System.out.println("info about previous versions & inprovements ");
+   System.out.println("v1.0.0.1-- first chatbot code");
+   System.out.println("v1.0.0.2-- multithreading & multiple java files in a project ");
+   System.out.println("v1.0.0.3-- inproved input entries" );
+   System.out.println("v1.0.0.4-- multi packages initailized");
+   System.out.println("v1.0.0.5-- more option added in movie & prog. lang. options" );
+}
+  // public void choice8(){
 
- void two(){                                                                  
-
-System.out.println("\t\t\t\t\t\t what is your current mood");
- String mood=sc.nextLine();       
-     
- if(mood.isEmpty()){
-    System.out.println("\t\t\t\t\t\t no input detected");
-    }  
-       
-     String mood1="happy";
-       String mood2="angry";
-
-    if(mood.equals(mood1) ){
-        try{
-            Thread.sleep(1500);
-    System.out.println("\t\t\t\t\t\t a happy mood is a myth in ENGINEERING");
-        }
-        catch(InterruptedException e){
-         System.out.println(e);
-        }
-  }
-    else if(mood.equals(mood2)){
-        try{
-            Thread.sleep(1500);
-            System.out.println("\t\t\t\t\t\t don't be angry we are in ENGINEERING");
-        }
-  
-        catch(InterruptedException e){
-         System.out.println(e);
-        }
-    }
- 
-    else{
-    try{
-        Thread.sleep(1500);
-    System.out.println("\t\t\t\t\t\t I am still learning.....thank you");
-    }
-    
-
-    catch(InterruptedException e){
-         System.out.println(e);
-        }
-  }
-}     
-
-    @Override
-    public void choice7() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   //} 
 }
 
  class Image  {
      
     void show() throws IOException{                                                 //java image code using applets 
         
-        BufferedImage img=ImageIO.read(new File("C:\\Users\\bharat\\Downloads\\download.png"));
+        BufferedImage img=ImageIO.read(new File("D:\\netbeans\\chatbot_test1\\src\\chatbot_test1\\download.png"));        //the image source atteched with the code 
         ImageIcon icon=new ImageIcon(img);
         JFrame frame=new JFrame();
         frame.setLayout(new FlowLayout());
@@ -318,18 +211,19 @@ public class Chatbot_test1 {
     obj.firstinput();
    chatbot_test1.Secondinput out = new chatbot_test1.Secondinput();
    out.secondinput();
-    
-    
+   exitloop:  
+   do{
     System.out.println("\t\t\t\t\t\t ok...choose one option to use more feathers \n");
         System.out.println("\t\t\t\t\t\t 1.open notepad");
-        
-        System.out.println("\t\t\t\t\t\t 2. open image folder ");
-        System.out.println("\t\t\t\t\t\t 3. open calculator");
+        System.out.println("\t\t\t\t\t\t 2.open image folder ");
+        System.out.println("\t\t\t\t\t\t 3.open calculator");
         System.out.println("\t\t\t\t\t\t 4.open internet ");
         System.out.println("\t\t\t\t\t\t 5.about me");
         System.out.println("\t\t\t\t\t\t 6.rate me  ");
-        //System.out.println("\t\t\t\t\t\t\t\t\t\t 7.return back to the chat mode"); 
-        choice =sc.nextInt();
+        System.out.println("\t\t\t\t\t\t 7.info about versions"); 
+        System.out.println("\t\t\t\t\t\t 8.press 0 to exit" );
+        choice = sc.nextInt();
+        
         
         switch(choice){
             
@@ -339,10 +233,18 @@ public class Chatbot_test1 {
             case 4 :   obj.choice4();break;
             case 5 :   obj.choice5();break;
             case 6 :   obj.choice6();break;
-            //case 7 :   obj.choice7(); break;
+            case 7 :   obj.choice7(); break;
+            case 0 :      break exitloop;  
+             
         }
-        obj1.one();
-         obj1.two();
+   }
+   while(choice > 8 || choice < 8 );
+        
+   chatbot_test1.thirdoption src = new chatbot_test1.thirdoption();
+        src.one();
+        src.two();
+        //obj1.one();
+         //obj1.two();
          obj2.show();
     }
     }

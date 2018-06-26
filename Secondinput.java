@@ -25,7 +25,7 @@ class Secondinput {
         
              Thread.sleep(1500);
              System.out.println("\t\t\t\t\t\t " + name +  " which kind of movies you like ");
-   
+             
     }
     
     catch(InterruptedException e){
@@ -33,19 +33,21 @@ class Secondinput {
             }
     
    movie = sc.nextLine();
-   if(movie.isEmpty()){                                                                           //input cannot be empty
-    System.out.println("\t\t\t\t\t\t no input detected");
-    }
-    
+   while(!movie.matches("[a-zA-Z]+"))                                                     
+    {
+     System.out.println("don't use numbers & special characters!");
+     movie = sc.nextLine();    
+     }
+      
    if(movie.equals(mtype1) )                                                                                 //if else statement for movie type
    {  
        try{
            Thread.sleep(1500);
        
        System.out.println("\t\t\t\t\t\t top 3 upcoming movies this year");
-             System.out.println("\t\t\t\t\t\t   * Race 3");
-             System.out.println("\t\t\t\t\t\t   * baaghi 2 ");
-             System.out.println("\t\t\t\t\t\t   * Jurrassic World");
+             System.out.println("\t\t\t\t\t\t   * Mission impossibble");
+             System.out.println("\t\t\t\t\t\t   * Skyscraper ");
+             System.out.println("\t\t\t\t\t\t   * Johnny english");
        }
          catch(InterruptedException e){
           System.out.println(e);
@@ -57,8 +59,8 @@ class Secondinput {
      Thread.sleep(1500);
  
        System.out.println("\t\t\t\t\t\t top 3 upcoming movies this year");
-             System.out.println("\t\t\t\t\t\t    * Avengers : Infinity War");
-             System.out.println("\t\t\t\t\t\t    * Deadpool 2 ");
+             System.out.println("\t\t\t\t\t\t    * Ant man & the wasp");
+             System.out.println("\t\t\t\t\t\t    * Venom");
              System.out.println("\t\t\t\t\t\t    * Robot 2 ");
    }
    catch(InterruptedException e){
@@ -70,9 +72,9 @@ class Secondinput {
      try{
          Thread.sleep(1500);
           System.out.println("\t\t\t\t\t\t top 3 upcoming movies this year");
-          System.out.println("\t\t\t\t\t\t   * Midnight Sun");
-          System.out.println("\t\t\t\t\t\t   * October");
-          System.out.println("\t\t\t\t\t\t   * Overboard");
+          System.out.println("\t\t\t\t\t\t   * Student of the year 2");
+          System.out.println("\t\t\t\t\t\t   * Dhadak");
+          System.out.println("\t\t\t\t\t\t   * Midnight sun");
    
 }
     catch(InterruptedException e){
